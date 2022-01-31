@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{%block baseblock%}
+    <div style="background-image: url('static/images/background.jpg'); height: 100vh;" class="has-bg-im">
+<div class="container" align="center">
+
+    <h1>Product Details</h1>
+    <table class="table table-hover">
+        <thead class="table-info">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Model Name</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Date</th>
+        <th></th>
+        </thead>
+        {%for p in prod%}
+        <tr class="table-warning">
+            <td>{{p.id}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.model_name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.color}}</td>
+            <td>{{p.date}}</td>
+            <td>
+                <a href="/update/{{p.id}}" class="btn btn-info">Update</a>
+                <a href="/delete/{{p.id}}" class="btn btn-info">Delete</a>
+            </td>
+        </tr>
+        {%endfor%}
+    </table>
+    <a href="/insert" class="btn btn-primary">Insert</a>
+    </div>
+</div>
+{%endblock%}
+</body>
+</html>

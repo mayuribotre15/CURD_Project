@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{%extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+{%block baseblock%}
+<div align="center">
+    <h1>Product Details</h1>
+    <form method="post">
+        {%csrf_token%}
+        Product ID : <input type="text" name="id" value="{{prod.id}}"><p></p>
+        Product Name : <input type="text" name="name" value="{{prod.name}}"><p></p>
+        Product Model Name : <input type="text" name="model_name" value="{{prod.model_name}}"><p></p>
+        Product Price : <input type="text" name="price" value="{{prod.price}}"><p></p>
+        Product Color : <input type="text" name="color" value="{{prod.color}}"><p></p>
+        <input type="submit" class="btn btn-primary btn-lg" name="submit" value="Update Records"><p></p>
+    </form>
+</div>
+{%endblock%}
+</body>
+</html>
